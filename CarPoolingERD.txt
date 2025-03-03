@@ -1,0 +1,40 @@
+In https://dbdiagram.io/d paste the below content to get ERD diagram.
+
+Table ride {
+  ride_id integer [primary key]
+  ride_giver_id integer
+  origin varchar
+  destination varchar
+  departure timestamp 
+  available_seats integer
+
+}
+
+Table users {
+  id integer [primary key]
+  username varchar
+  role varchar
+  email varchar
+  password varchar
+}
+
+Table Booking {
+  booking_id integer [primary key]
+  ride_id integer
+  passenger_id integer
+  booking_datetime timestamp
+  status varchar
+}
+
+Table Payment {
+  payment_id integer [primary key]
+  booking_id integer
+  amount Decimal(10,2)
+  payment_date timestamp
+}
+
+Ref: Booking.passenger_id > users.id 
+Ref: Booking.ride_id > ride.ride_id
+Ref: users.id > ride.ride_giver_id
+Ref: Payment.booking_id > Booking.booking_id
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extraordinary Signup</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: radial-gradient(circle, #f2d9c2, #f8eee7);
+            overflow: hidden;
+        }
+        .signup-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .signup-container h1 {
+            margin-bottom: 30px;
+            font-size: 32px;
+            color: #5a4f4f;
+            letter-spacing: 1px;
+        }
+
+        .signup-container input {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .signup-container input:focus {
+            border-color: #d4a373;
+        }
+
+        .signup-container button {
+            background: linear-gradient(135deg, #d4a373, #f4b183);
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .signup-container button:hover {
+            background: linear-gradient(135deg, #e6b692, #f7c199);
+            transform: translateY(-3px);
+        }
+
+        .signup-container a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #a16857;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .signup-container a:hover {
+            color: #7e4c3c;
+        }
+
+        .background-circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background-circles span {
+            position: absolute;
+            display: block;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: moveCircles 20s infinite;
+        }
+
+        @keyframes moveCircles {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-50px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        .background-circles span:nth-child(1) {
+            top: 5%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .background-circles span:nth-child(2) {
+            top: 50%;
+            left: 70%;
+            animation-delay: 4s;
+            width: 300px;
+            height: 300px;
+        }
+
+        .background-circles span:nth-child(3) {
+            top: 85%;
+            left: 15%;
+            animation-delay: 8s;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-circles">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="signup-container">
+        <h1>Create Account</h1>
+        <form action="#" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit">Signup</button>
+        </form>
+        <a href="#">Already have an account? Login</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Ride</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f5dc, #e3d9c5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #d2b48c;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: #f1f1f;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #d2b48c;
+            font-weight: bold;
+        }
+
+        .ride-list {
+            padding: 20px;
+        }
+
+        .ride-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border: 1px solid #d2b48c;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background: #fdf5e6;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .ride-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .ride-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ccc;
+            margin-right: 15px;
+        }
+
+        .ride-info {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .ride-info p {
+            margin: 5px 0;
+        }
+
+        .contact-btn {
+            background: #d2b48c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 14px;
+        }
+
+        .contact-btn:hover {
+            background: #c0a080;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Matching Ride Givers</div>
+
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Logout</a>
+        </div>
+
+        <div class="ride-list">
+            <!-- Ride Card 1 -->
+            <div class="ride-card">
+                <div class="ride-details">
+                    <div class="profile-img"></div>
+                    <div class="ride-info">
+                        <p><strong>John Doe</strong></p>
+                        <p>From: <strong>Downtown</strong> | To: <strong>Airport</strong></p>
+                        <p>Via: <strong>Highway 10</strong></p>
+                        <p>Time: <strong>9:30 AM</strong></p>
+                    </div>
+                </div>
+                <button class="contact-btn">Contact</button>
+            </div>
+
+            <!-- Ride Card 2 -->
+            <div class="ride-card">
+                <div class="ride-details">
+                    <div class="profile-img"></div>
+                    <div class="ride-info">
+                        <p><strong>Jane Smith</strong></p>
+                        <p>From: <strong>City Center</strong> | To: <strong>University</strong></p>
+                        <p>Via: <strong>Main Street</strong></p>
+                        <p>Time: <strong>10:00 AM</strong></p>
+                    </div>
+                </div>
+                <button class="contact-btn">Contact</button>
+            </div>
+
+            <!-- Ride Card 3 -->
+            <div class="ride-card">
+                <div class="ride-details">
+                    <div class="profile-img"></div>
+                    <div class="ride-info">
+                        <p><strong>Sam Wilson</strong></p>
+                        <p>From: <strong>Northside</strong> | To: <strong>Southside</strong></p>
+                        <p>Via: <strong>Route 22</strong></p>
+                        <p>Time: <strong>11:15 AM</strong></p>
+                    </div>
+                </div>
+                <button class="contact-btn">Contact</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
