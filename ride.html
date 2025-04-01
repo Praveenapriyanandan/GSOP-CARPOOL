@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Rides</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f5dc, #fbdfa6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #a4886b, #d1ab89);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 10px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background: linear-gradient(135deg, #d1ab89, #a4886b);
+            transform: translateY(-3px);
+        }
+
+        .container {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .ride-list {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .ride-list li {
+            background: #f9f9f9;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333;
+            text-align: left;
+        }
+
+        .ride-list li:hover {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/home">Home</a>
+        <a href="/profile">Profile</a>
+        <a href="/login">Logout</a>
+    </div>
+    
+    <div class="container">
+        <div class="header">Available Rides</div>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% else %}
+            <ul class="ride-list">
+                {% for ride in rides %}
+                    <li>
+                        <strong>From:</strong> {{ ride[2] }} <br>
+                        <strong>To:</strong> {{ ride[3] }} <br>
+                        <strong>Via:</strong> {{ ride[4] }} <br>
+                        <strong>Departure:</strong> {{ ride[5] }} <br>
+                        <strong>Seats Available:</strong> {{ ride[6] }} <br>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

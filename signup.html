@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f0e6d2, #d4c3a3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            width: 90%;
+            max-width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border 0.3s;
+        }
+
+        input:focus {
+            border-color: #a08060;
+            outline: none;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 16px;
+            color: #777;
+        }
+
+        .toggle-password:hover {
+            color: #555;
+        }
+
+        .btn {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            background: #a08060;
+            color: #fff;
+            width: 100%;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #8c6c50;
+        }
+
+        .login-link {
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #a08060;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Signup</h2>
+        <form action="/signup" method="POST">
+            <div class="form-group">
+                <input type="text" name="First Name" placeholder="First Name" required><br>
+            </div>
+            <div class="form-group">
+                <input type="text" name="Last Name" placeholder="Last Name" ><br>
+            </div>
+            <div class="form-group">
+                <input type="text" id="contact" name="Contact Number" placeholder="Contact Number" required maxlength="10" pattern="\d{10}" title="Please enter a valid 10-digit number"><br>
+            </div>
+            <div class="form-group">
+                <input type="email" name="emailid" placeholder="Email ID" required><br>
+            </div>
+            <div class="form-group password-container">
+                <input type="password" id="password" name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" title="Password must be at least 8 characters, include an uppercase letter, a lowercase letter, a number, and a special character"><br>
+                <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+            </div>
+            <div class="form-group password-container">
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required><br>
+                <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <p>{{ message }}</p>
+        </form>
+        <a href="/login" class="login-link">Already have an account? Login here.</a>
+    </div>
+
+    <script>
+        function togglePassword(id) {
+            let passwordField = document.getElementById(id);
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+        }
+    </script>
+</body>
+</html>
